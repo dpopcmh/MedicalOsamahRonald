@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Express 14 for Windows Desktop
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalProject", "MedicalProject\MedicalProject.csproj", "{92F099A1-BC41-4703-8520-CF9C2E853E83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalProjectClassLibrary", "MedicalProjectClassLibrary\MedicalProjectClassLibrary.csproj", "{A29CF7DD-3CE2-4FDB-9087-A3BC98027775}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{92F099A1-BC41-4703-8520-CF9C2E853E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92F099A1-BC41-4703-8520-CF9C2E853E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92F099A1-BC41-4703-8520-CF9C2E853E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A29CF7DD-3CE2-4FDB-9087-A3BC98027775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29CF7DD-3CE2-4FDB-9087-A3BC98027775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29CF7DD-3CE2-4FDB-9087-A3BC98027775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29CF7DD-3CE2-4FDB-9087-A3BC98027775}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
