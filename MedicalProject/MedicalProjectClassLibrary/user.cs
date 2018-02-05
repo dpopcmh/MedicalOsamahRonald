@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MedicalProjectClassLibrary
 {
-    public class user
+    public class User
     {
         private string _username;
         public string UserName
@@ -18,6 +18,12 @@ namespace MedicalProjectClassLibrary
         public string PassWord
         {
             get { return _password; }
+        }
+
+        private bool _isdoctor;
+        public bool IsDoctor
+        {
+            get { return _isdoctor; }
         }
     }
 }

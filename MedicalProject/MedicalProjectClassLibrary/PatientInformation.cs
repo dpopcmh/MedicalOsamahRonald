@@ -46,5 +46,11 @@ namespace MedicalProjectClassLibrary
         {
             get { return _gender; }
         }
+
+        private string _chiefcomplaint;
+        public string ChiefComplaint
+        {
+            get { return _chiefcomplaint; }
+        }
     }
 }
