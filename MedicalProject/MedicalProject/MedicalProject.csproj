@@ -99,5 +99,11 @@
       <Name>MedicalProjectClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icons\login.png" />
+    <Resource Include="Icons\passicn.png" />
+    <Resource Include="Icons\th.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,5 +24,12 @@ namespace MedicalProject
         {
             InitializeComponent();
         }
+
+        private void main_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        
     }
 }
