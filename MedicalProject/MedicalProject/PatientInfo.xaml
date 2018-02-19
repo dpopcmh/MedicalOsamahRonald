@@ -1,0 +1,61 @@
+﻿<Window x:Class="MedicalProject.PatientInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalProject"
+        mc:Ignorable="d"
+        Title="PatientRecord" Height="731.646" Width="1041.028" WindowStyle="None" ResizeMode="NoResize">
+    <Grid Margin="0,63,-0.2,-63">
+        <Grid Background="AliceBlue" Margin="0,-67,0,63">
+            <Image Source="Icons/bck5.jpg" Margin="0,-470,-0.2,216"/>
+            <TextBlock Text="Patient Information" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" Margin="419,27,436.8,0"/>
+            <Image Source="Icons/searchimg.png" Width="100" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,27,54.8,641" RenderTransformOrigin="0.075,0.241" Height="68"/>
+            <Button x:Name="button" HorizontalAlignment="Left" Margin="886,27,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Height="68" Click="button_Click"/>
+            <Grid Margin="20 100 20 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Patient First Name" Grid.Column="1" Grid.Row="1"/>
+                <TextBox x:Name="txtBxFName" HorizontalAlignment="Left" Height="23" Grid.Column="2" Grid.Row="1" Margin="10 0 10 0" Width="131"/>
+                <TextBlock  Text="Patient Last Name" Grid.Column="1" Grid.Row="2" Margin="0 10 10 0"/>
+                <TextBox x:Name="txtBxLName" Height="23" Margin="10 10 10 0" Width="131" Grid.Column="2" Grid.Row="2"/>
+                <TextBlock Margin="01 0,01,0" Text="D.O.B" Grid.Column="3" Grid.Row="1"/>
+                <TextBox x:Name="txtBxDob" Height="23" Margin="10,0,10,0" Width="131" Grid.Column="4" Grid.Row="1"/>
+                <TextBox x:Name="txtBxAge" Height="23" Margin="10 0,10,0" Width="131" Grid.Column="4" Grid.Row="2"/>
+                <TextBlock Text="Age" Grid.Column="3" Grid.Row="2" Margin="0 10 0 0"/>
+                <TextBlock Margin="0 0,0,0" Text="Chief Complaint" Grid.Column="5" Grid.Row="1"/>
+                <TextBox x:Name="txtBxChComp" Height="23" Margin="10 0 10 0" Width="131" Grid.Column="6" Grid.Row="1"/>
+            </Grid>
+
+        </Grid>
+        <Grid Height="527" Margin="20,80,20 40" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+            <ListView x:Name="PatientTable" ItemsSource="{Binding Source=MedicalProjectClassLibrary.PatientInfo}" MouseDoubleClick="PatientTable_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Patient First Name" DisplayMemberBinding="{Binding Path=FirstName}"      Width="140" />
+                        <GridViewColumn Header="Patient Last Name"  DisplayMemberBinding="{Binding Path=LastName}"       Width="140" />
+                        <GridViewColumn Header="Patient DOB"        DisplayMemberBinding="{Binding Path=DateOfBirth,StringFormat=MM/dd/yyyy}"    Width="100" />
+                        <GridViewColumn Header="Patient Age"                DisplayMemberBinding="{Binding Path=Age}"            Width="100" />
+                        <GridViewColumn Header="Chief Complaint"    DisplayMemberBinding="{Binding Path=ChiefComplaint}" Width="500"  />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </Grid>
+
+</Window>

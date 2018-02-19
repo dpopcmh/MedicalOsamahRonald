@@ -14,6 +14,7 @@ namespace MedicalProjectClassLibrary
             get { return _username; }
         }
 
+        
         private string _password;
         public string PassWord
         {

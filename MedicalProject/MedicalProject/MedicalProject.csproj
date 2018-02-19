@@ -54,20 +54,55 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Allergy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LabResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="loginScreen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Allergy.xaml.cs">
+      <DependentUpon>Allergy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="LabResult.xaml.cs">
+      <DependentUpon>LabResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="loginScreen.xaml.cs">
+      <DependentUpon>loginScreen.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Medication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="patientRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Medication.xaml.cs">
+      <DependentUpon>Medication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientInfo.xaml.cs">
+      <DependentUpon>PatientInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="patientRecord.xaml.cs">
+      <DependentUpon>patientRecord.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -99,11 +134,40 @@
       <Name>MedicalProjectClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icons\book.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\login.png" />
     <Resource Include="Icons\passicn.png" />
     <Resource Include="Icons\th.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\pat4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\openbook4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\bkgroundlogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\bck5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\searchimg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\medicationImg1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\labImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\recordsImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Allergy3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

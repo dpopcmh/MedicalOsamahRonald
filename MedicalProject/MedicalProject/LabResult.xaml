@@ -1,0 +1,34 @@
+﻿<Window x:Class="MedicalProject.LabResult"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalProject"
+        mc:Ignorable="d"
+        Title="LabResult" Height="237.591" Width="499.27" ResizeMode="NoResize" WindowStyle="None">
+    <Grid Background="AliceBlue">
+        <Image Source="Icons/labImg.jpg" Margin="86,0,-86.2,-0.4"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="20"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Lab Result" Grid.Column="3" Grid.Row="1" Margin="10 10 10 0" FontWeight="Bold" FontSize="14"/>
+            <TextBox x:Name="txtMedication" Grid.Column="3" Grid.Row="2" Width="300" Margin="10 20 10 20"/>
+            <Button Content="Add Result" Grid.Column="3" Grid.Row="3" Width="100" Margin="25.6,20.2,195.2,0.2"/>
+            <Button Content="Close" Grid.Column="3" Grid.Row="3" Click="Button_Click" Margin="160.6,20.2,30.6,0" Width="100"/>
+        </Grid>
+    </Grid>
+</Window>
