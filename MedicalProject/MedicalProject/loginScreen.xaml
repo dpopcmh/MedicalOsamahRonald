@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="301.613" Width="460.484" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="main_MouseLeftButtonDown">
+        Title="MainWindow" Height="301.613" Width="460.484" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Main_MouseLeftButtonDown">
     <Grid x:Name="main1">
         <Image Source="Icons/bkgroundlogin.png"/>
         <TextBlock Text="Medical Records" HorizontalAlignment="Left" Margin="170,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="162" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Foreground="Black"/>
@@ -19,7 +19,7 @@
             <TextBlock x:Name="txtpasword" HorizontalAlignment="Right" Margin="0,47,189,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Foreground="Black" Height="20" FontSize="16" FontWeight="Bold" Width="96" FontFamily="Times New Roman" FrameworkElement.FlowDirection="RightToLeft"/>
             <Image x:Name="image2" HorizontalAlignment="Left" Height="20" Margin="11,47,0,0" VerticalAlignment="Top" Width="26" Source="Icons/passicn.png"/>
             <Image x:Name="image3" HorizontalAlignment="Left" Height="20" Margin="120,78,0,0" VerticalAlignment="Top" Width="58" Source="Icons/login.png"/>
-            <Button x:Name="btnSubmit" HorizontalAlignment="Left" Margin="115,76,0,0" VerticalAlignment="Top" Width="58" Background="{x:Null}" Foreground="#FFF5F1F1" Height="20" Click="btnSubmit_Click"/>
+            <Button x:Name="btnSubmit" HorizontalAlignment="Left" Margin="115,76,0,0" VerticalAlignment="Top" Width="58" Background="{x:Null}" Foreground="#FFF5F1F1" Height="20" Click="BtnSubmit_Click"/>
             <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="118,50,0,0" VerticalAlignment="Top" Width="125"/>
         </Grid>
 

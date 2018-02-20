@@ -9,22 +9,12 @@ namespace MedicalProjectClassLibrary
     public class User
     {
         private string _username;
-        public string UserName
-        {
-            get { return _username; }
-        }
+        public string UserName { get; set; }
 
-        
         private string _password;
-        public string PassWord
-        {
-            get { return _password; }
-        }
+        public string PassWord { get; set; }
 
-        private bool _isdoctor;
-        public bool IsDoctor
-        {
-            get { return _isdoctor; }
-        }
+        private string _jobtitle;
+        public string JobTitle { get; set; }
     }
 }

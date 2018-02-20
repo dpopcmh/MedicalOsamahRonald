@@ -1,0 +1,3 @@
+Alex|Ronald|Doctor
+Username|Password|Nurse
+Test|Test|Doctor
