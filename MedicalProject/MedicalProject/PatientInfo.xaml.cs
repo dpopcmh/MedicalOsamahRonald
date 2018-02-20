@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MedicalProjectClassLibrary;
 
 namespace MedicalProject
 {
@@ -23,8 +24,29 @@ namespace MedicalProject
         public PatientInfo()
         {
             InitializeComponent();
-        }
+            List<PatientInformation> patientlist = new List<PatientInformation>();
+            try
+            {
+                string path = System.Environment.CurrentDirectory;
+                string path2 = path.Substring(0, path.LastIndexOf("bin")) + "Data" + "\\patientinformation.txt";
+                FileStream fs = new FileStream(path2, FileMode.Open);
+                StreamReader sr = new StreamReader(fs);
 
+                while (sr.Peek() != -1)
+                {
+                    string singlepatient = sr.ReadLine();
+                    string[] singlepatientdata = singlepatient.Split('|');
+                    PatientInformation patient = new PatientInformation() { FirstName = singlepatientdata[0], LastName = singlepatientdata[1], DateOfBirth = singlepatientdata[2],
+                    AdmitDate = singlepatientdata[3], Age = Int32.Parse(singlepatientdata[4]), Gender = singlepatientdata[5], ChiefComplaint = singlepatientdata[6] };
+                    patientlist.Add(patient);
+                }
+                fs.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error finding patients...");
+            }
+        }
         private void button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
