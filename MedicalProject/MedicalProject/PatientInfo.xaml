@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="PatientRecord" Height="731.646" Width="1041.028" WindowStyle="None" ResizeMode="NoResize">
+        Title="PatientRecord" Height="731.646" Width="1041.028" WindowStyle="None" ResizeMode="NoResize" MouseLeftButtonDown="Window_MouseLeftButtonDown_1">
     <Grid Margin="0,63,-0.2,-63">
         <Grid Background="AliceBlue" Margin="0,-67,0,63">
             <Image Source="Icons/bck5.jpg" Margin="0,-470,-0.2,216"/>

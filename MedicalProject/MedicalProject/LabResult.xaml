@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="LabResult" Height="237.591" Width="499.27" ResizeMode="NoResize" WindowStyle="None">
+        Title="LabResult" Height="237.591" Width="499.27" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid Background="AliceBlue">
         <Image Source="Icons/labImg.jpg" Margin="86,0,-86.2,-0.4"/>
         <Grid>
