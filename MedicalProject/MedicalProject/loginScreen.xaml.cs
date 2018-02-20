@@ -48,7 +48,7 @@ namespace MedicalProject
                     User user = new User() { UserName = singleuserdata[0], PassWord = singleuserdata[1], JobTitle = singleuserdata[2] };
                     userlist.Add(user);
                 }
-                sr.Close();
+                fs.Close();
             }
             catch (Exception)
             {
