@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MedicalProjectClassLibrary;
+using System.Collections.ObjectModel;
 
 namespace MedicalProject
 {
@@ -21,24 +22,25 @@ namespace MedicalProject
     /// </summary>
     public partial class PatientInfo : Window
     {
+        public ObservableCollection<MedicalProjectClassLibrary.PatientInformation> patientlist = new ObservableCollection<MedicalProjectClassLibrary.PatientInformation>();
         public PatientInfo()
         {
             InitializeComponent();
-            List<PatientInformation> patientlist = new List<PatientInformation>();
             try
             {
                 string path = System.Environment.CurrentDirectory;
                 string path2 = path.Substring(0, path.LastIndexOf("bin")) + "Data" + "\\patientinformation.txt";
                 FileStream fs = new FileStream(path2, FileMode.Open);
                 StreamReader sr = new StreamReader(fs);
-
+                int newestid = 1;
                 while (sr.Peek() != -1)
                 {
                     string singlepatient = sr.ReadLine();
                     string[] singlepatientdata = singlepatient.Split('|');
                     PatientInformation patient = new PatientInformation() { FirstName = singlepatientdata[0], LastName = singlepatientdata[1], DateOfBirth = singlepatientdata[2],
-                    AdmitDate = singlepatientdata[3], Age = Int32.Parse(singlepatientdata[4]), Gender = singlepatientdata[5], ChiefComplaint = singlepatientdata[6] };
+                    AdmitDate = singlepatientdata[3], Age = Int32.Parse(singlepatientdata[4]), Gender = singlepatientdata[5], ChiefComplaint = singlepatientdata[6], IDNumber = newestid++.ToString("D5") };
                     patientlist.Add(patient);
+                    PatientTable.ItemsSource = patientlist;
                 }
                 fs.Close();
             }
@@ -54,7 +56,9 @@ namespace MedicalProject
 
         private void PatientTable_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            patientRecord sw = new patientRecord();
+            sw.Show();
+            this.Close();
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -70,6 +74,11 @@ namespace MedicalProject
         private void Window_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void PatientTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

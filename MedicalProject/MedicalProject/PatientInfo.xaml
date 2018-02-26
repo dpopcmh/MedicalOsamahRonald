@@ -44,7 +44,7 @@
 
         </Grid>
         <Grid Height="527" Margin="20,80,20 40" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
-            <ListView x:Name="PatientTable" ItemsSource="{Binding Source=MedicalProjectClassLibrary.PatientInfo}" MouseDoubleClick="PatientTable_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView x:Name="PatientTable" ItemsSource="{Binding Source=patientlist}" MouseDoubleClick="PatientTable_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="PatientTable_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Patient First Name" DisplayMemberBinding="{Binding Path=FirstName}"      Width="140" />

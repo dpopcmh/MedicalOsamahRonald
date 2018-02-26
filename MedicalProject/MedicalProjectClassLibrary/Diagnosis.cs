@@ -10,9 +10,11 @@ namespace MedicalProjectClassLibrary
     {
         public string Symptoms { get; set; }
 
-        public string DateDiagnosis { get; set;}
+        public string DateDiagnosis { get; set; }
 
         public string DoctorName { get; set; }
+
+        public string IDNumber { get; set; }
     }
 
 }

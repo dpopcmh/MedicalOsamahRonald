@@ -14,6 +14,6 @@ namespace MedicalProjectClassLibrary
 
         public string DatePrescribed { get; set; }
 
-
+        public string IDNumber { get; set; }
     }
 }

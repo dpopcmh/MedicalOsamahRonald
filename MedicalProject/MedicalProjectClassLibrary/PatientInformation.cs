@@ -30,5 +30,8 @@ namespace MedicalProjectClassLibrary
 
         private string _chiefcomplaint;
         public string ChiefComplaint { get; set; }
+
+        private string _idnumber;
+        public string IDNumber { get; set; }
     }
 }

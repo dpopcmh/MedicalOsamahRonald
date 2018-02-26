@@ -39,14 +39,14 @@
                 <Image x:Name="image" Grid.Column="1" Grid.Row="1" Height="142" Margin="0,10,0,0" Width="146"/>
             </Border>
             <TextBlock Text="Patient ID#:" Grid.Column="2" Grid.Row="1" Margin="10 10 0 0"/>
-            <TextBlock x:Name="_patientNumber" Text="Patient x number" Grid.Column="3" Grid.Row="1" Margin="0 10 0 0"/>
-            <TextBlock Text="Patient Full Name:" Grid.Column="2" Grid.Row="1" Margin="10 40 0 0"/>
+            <TextBlock x:Name="_patientNumber" Text="{Binding Path=patientlist}" Grid.Column="3" Grid.Row="1" Margin="0 10 0 0"/>
+            <TextBlock Text="Patient Name:" Grid.Column="2" Grid.Row="1" Margin="10 40 0 0"/>
             <TextBlock x:Name="_patientFNmae" Text=" Patient First Name" Grid.Column="3" Grid.Row="1" Margin="0 40 0 0"/>
             <TextBlock x:Name="_patientLName" Text=" Patient Last Name" Grid.Column="4" Grid.Row="1" Margin="10 40 0 0"/>
-            <TextBlock Text="Date Addmitted" Grid.Column="5" Grid.Row="1" Margin="0 10 10 0"/>
-            <TextBlock x:Name="_dataAdmitted" Text=" Datex Addmitted" Grid.Column="5" Grid.Row="1" Margin="100 10 10 0"/>
+            <TextBlock Text="Date Admitted" Grid.Column="5" Grid.Row="1" Margin="0 10 10 0"/>
+            <TextBlock x:Name="_dataAdmitted" Text=" Datex Admitted" Grid.Column="5" Grid.Row="1" Margin="100 10 10 0"/>
             <TextBlock Text="D.O.B" Grid.Column="2" Grid.Row="1" Margin="10 70 0 0"/>
-            <TextBlock x:Name="_DOB" Text="xDOB" Grid.Column="2" Grid.Row="1" Margin="50 70 0 0"/>
+            <TextBlock x:Name="_DOB" Text="{Binding Path=patientlist.DateOfBirth}" Grid.Column="2" Grid.Row="1" Margin="50 70 0 0"/>
             <TextBlock Text="Age:" Grid.Column="3" Grid.Row="1" Margin="10 70 10 0"/>
             <TextBlock x:Name="_Age" Text="Agex" Grid.Column="3" Grid.Row="1" Margin="50 70 10 0"/>
             <TextBlock Text="Gender" Grid.Column="4" Grid.Row="1" Margin="0 70 0 0"/>
