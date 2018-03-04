@@ -28,10 +28,16 @@ namespace MedicalProject
         public patientRecord()
         {
             InitializeComponent();
+            if (SavedLogin.IsDoctor == false)
+            {
+                _diagnosisbutton.IsEnabled = false;
+                _diagnosisbutton.Visibility = System.Windows.Visibility.Hidden;
+            }
             string imagepath = System.Environment.CurrentDirectory;
             string imagepath2 = imagepath.Substring(0, imagepath.LastIndexOf("bin")) + "Photos" + "\\" + SelectedPatient.CurrentPatient.IDNumber + ".png";
             if (File.Exists(imagepath2))
                 {
+                _noImage.Visibility = System.Windows.Visibility.Hidden;
                  { PatientImage.Source = new BitmapImage(new Uri(imagepath2)); }
                 }
             DataContext = SelectedPatient.CurrentPatient;
@@ -117,15 +123,8 @@ namespace MedicalProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (SavedLogin.IsDoctor == true)
-            {
                 PatientRecordDiagnosis sw = new PatientRecordDiagnosis();
                 sw.Show();
-            }
-            else
-            {
-                MessageBox.Show("Only doctors may add a diagnosis.");
-            }
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -133,6 +132,18 @@ namespace MedicalProject
             PatientInfo sw = new PatientInfo();
             sw.Show();
             this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            PatientRecordLabResult sw = new PatientRecordLabResult();
+            sw.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            PatientRecordMedication sw = new PatientRecordMedication();
+            sw.Show();
         }
     }
 }

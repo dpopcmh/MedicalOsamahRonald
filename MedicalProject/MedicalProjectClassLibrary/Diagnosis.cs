@@ -12,13 +12,13 @@ namespace MedicalProjectClassLibrary
 
         public string Opinion { get; set; }
 
-        public string DateDiagnosis { get; set; }
-
         public string DoctorName { get; set; }
+
+        public string DateDiagnosis { get; set; }
 
         public override string ToString()
         {
-            return Opinion + " - " + DateDiagnosis + " - " + DoctorName;
+            return Opinion + " - " + DoctorName + " - " + DateDiagnosis;
         }
     }
 }

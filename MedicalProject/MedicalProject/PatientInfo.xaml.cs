@@ -84,5 +84,11 @@ namespace MedicalProject
 
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow sw = new MainWindow();
+            sw.Show();
+            this.Close();
+        }
     }
 }

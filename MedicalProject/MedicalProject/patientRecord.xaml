@@ -43,7 +43,7 @@
             <TextBlock x:Name="_patientNumber" Text="{Binding Path = IDNumber}" Grid.Column="3" Grid.Row="1" Margin="0 10 0 0"/>
             <TextBlock Text="Patient Name:" Grid.Column="2" Grid.Row="1" Margin="10 40 0 0"/>
             <TextBlock x:Name="_patientFNmae" Text="{Binding Path = FirstName}" Grid.Column="3" Grid.Row="1" Margin="0 40 0 0"/>
-            <TextBlock x:Name="_patientLName" Text="{Binding Path = LastName}" Grid.Column="4" Grid.Row="1" Margin="10 40 0 0"/>
+            <TextBlock x:Name="_patientLName" Text="{Binding Path = LastName}" Grid.Column="4" Grid.Row="1" Margin="0 40 0 0"/>
             <TextBlock Text="Date Admitted:" Grid.Column="5" Grid.Row="1" Margin="0 10 10 0"/>
             <TextBlock x:Name="_dataAdmitted" Text="{Binding Path = AdmitDate}" Grid.Column="5" Grid.Row="1" Margin="100 10 10 0"/>
             <TextBlock Text="D.O.B:" Grid.Column="2" Grid.Row="1" Margin="10 70 0 0"/>
@@ -53,15 +53,16 @@
             <TextBlock Text="Gender:" Grid.Column="4" Grid.Row="1" Margin="0 70 0 0"/>
             <TextBlock x:Name="_Gender" Text="{Binding Path = Gender}" Grid.Column="4" Grid.Row="1" Margin="50 70 0 0"/>
             <Button Content="Add Allergy" Grid.ColumnSpan="2" Grid.Row="3" FontSize="14" Margin="20 10 0 0" Width="120"/>
-            <Button Content="Add Medication" Grid.Column="5" Grid.Row="3" FontSize="14" Margin="0 10 0 0" Width="120"/>
-            <Button Content="Add Lab Result" Grid.Column="1" Grid.Row="4" FontSize="14" Grid.ColumnSpan="1" Margin="0 180 0 0" Width="120"/>
-            <Button Content="Add Diagnosis" Grid.Column="5" Grid.Row="4" FontSize="14" Grid.ColumnSpan="2" Margin="0 180 0 0" Width="120" Click="Button_Click"/>
+            <Button Content="Add Medication" Grid.Column="5" Grid.Row="3" FontSize="14" Margin="0 10 0 0" Width="120" Click="Button_Click_2"/>
+            <Button Content="Add Lab Result" Grid.Column="1" Grid.Row="4" FontSize="14" Grid.ColumnSpan="1" Margin="0 180 0 0" Width="120" Click="Button_Click_1"/>
+            <Button x:Name="_diagnosisbutton" Content="Add Diagnosis" Grid.Column="5" Grid.Row="4" FontSize="14" Grid.ColumnSpan="2" Margin="0 180 0 0" Width="120" Visibility ="Visible" Click="Button_Click"/>
         </Grid>
         <Image Margin="20,126,559,441" x:Name="PatientImage"/>
         <ListBox   x:Name="patientAllergies" Margin="20,310,400,230" />
         <ListBox   x:Name="patientMedication" Margin="394,310,26,230" />
         <ListBox   x:Name="patientLabResult" Margin="20,524,400,16" />
         <ListBox   x:Name="patientDiagnosis" Margin="394,522,26,18" />
+        <TextBlock x:Name="_noImage" HorizontalAlignment="Left" Height="67" Margin="60,175,0,0" TextWrapping="Wrap" Text="No Image" FontSize="15" Visibility="Visible" VerticalAlignment="Top" Width="66"/>
 
     </Grid>
 </Window>

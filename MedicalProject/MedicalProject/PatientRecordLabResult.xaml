@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="LabResult" Height="237.591" Width="499.27" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        Title="LabResult" Height="237.591" WindowStartupLocation="CenterScreen" Width="499.27" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid Background="AliceBlue">
         <Image Source="Icons/labImg.jpg" Margin="86,0,-86.2,-0.4"/>
         <Grid>
@@ -26,9 +26,12 @@
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
             <TextBlock Text="Lab Result" Grid.Column="3" Grid.Row="1" Margin="10 10 10 0" FontWeight="Bold" FontSize="14"/>
-            <TextBox x:Name="txtMedication" Grid.Column="3" Grid.Row="2" Width="300" Margin="10 20 10 20"/>
-            <Button Content="Add Result" Grid.Column="3" Grid.Row="3" Width="100" Margin="25.6,20.2,195.2,0.2"/>
-            <Button Content="Close" Grid.Column="3" Grid.Row="3" Click="Button_Click" Margin="160.6,20.2,30.6,0" Width="100"/>
+            <TextBlock Text="Enter Lab Type" Grid.Column="3" Grid.Row="2" Margin="10 10 10 0" FontWeight="Bold" FontSize="10"/>
+            <TextBlock Text="Enter Lab Result" Grid.Column="3" Grid.Row="2" Margin="10,56,10,26" FontWeight="Bold" FontSize="10"/>
+            <TextBox x:Name="txtLabType" Grid.Column="3" Grid.Row="2" Margin="10,25,15,52"/>
+            <Button Content="Add Lab Result" Grid.Column="3" Grid.Row="4" Click="OkButton_Click" Margin="32,20,193,0"/>
+            <Button Content="Close" Grid.Column="3" Grid.Row="4" Click="CancelButton_Click" Margin="175,20,50,0"/>
+            <TextBox x:Name="txtLabResult" Grid.Column="3" Grid.Row="2" Margin="10,69,15,8"/>
         </Grid>
     </Grid>
 </Window>

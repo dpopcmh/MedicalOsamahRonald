@@ -5,11 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="Add Diagnosis" Height="190" Width="300">
-    <Grid>
-        <StackPanel Grid.Column="0">
-            <Button x:Name="okButton" Click="okButton_Click" IsDefault="True" RenderTransformOrigin="0.502,6.021" Content="OK" Margin="0,0,191,0"/>
-            <Button x:Name="cancelButton" IsCancel="True" Content="Cancel" Margin="0,0,191,0" Click="cancelButton_Click"/>
-        </StackPanel>
+      Title="Add Diagnosis" Height="225.548" WindowStartupLocation="CenterScreen" Width="489.416" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid Background="SandyBrown">
+        <Image Source="Icons/openbook4.jpg" Margin="75,-10,-75,10"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="20"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto" MinHeight="40"/>
+                <RowDefinition Height="37"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="New Diagnosis" Grid.Column="3" Grid.Row="1" Margin="10 10 10 0" FontWeight="Bold" FontSize="14"/>
+            <TextBlock Text="Enter Diagnosis" Grid.Column="3" Grid.Row="2" Margin="10 10 10 0" FontWeight="Bold" FontSize="10"/>
+            <TextBlock Text="Enter Doctor Surname" Grid.Column="3" Grid.Row="2" Margin="10,56,10,26" FontWeight="Bold" FontSize="10"/>
+            <TextBox x:Name="txtDiagnosis" Grid.Column="3" Grid.Row="2" Margin="10,25,15,52"/>
+            <Button Content="Add Diagnosis" Grid.Column="3" Grid.Row="4" Click="OkButton_Click" Margin="32,20,193,0"/>
+            <Button Content="Close" Grid.Column="3" Grid.Row="4" Click="CancelButton_Click" Margin="175,20,50,0"/>
+            <TextBox x:Name="txtDiagnosisDoctor" Grid.Column="3" Grid.Row="2" Margin="10,69,15,8"/>
+        </Grid>
     </Grid>
 </Window>

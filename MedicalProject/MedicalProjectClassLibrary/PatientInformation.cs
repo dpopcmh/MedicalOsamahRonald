@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,5 +30,14 @@ namespace MedicalProjectClassLibrary
     public static class SelectedPatient
     {
         public static PatientInformation CurrentPatient = new PatientInformation();
+    }
+    public static class EditText
+    {
+        static void LineEdit (string NewText, string FileName, int ChosenLine)
+        {
+            string[] AllLine = File.ReadAllLines(FileName);
+            AllLine[ChosenLine - 1] = NewText;
+            File.WriteAllLines(FileName, AllLine);
+        }
     }
 }
