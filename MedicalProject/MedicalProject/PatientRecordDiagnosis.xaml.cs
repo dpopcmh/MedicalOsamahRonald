@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,25 +11,26 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MedicalProjectClassLibrary;
 
 namespace MedicalProject
 {
     /// <summary>
-    /// Interaction logic for Allergy.xaml
+    /// Interaction logic for PatientRecordDiagnosis.xaml
     /// </summary>
-    public partial class Allergy : Window
+    public partial class PatientRecordDiagnosis : Window
     {
-        public Allergy()
+        public PatientRecordDiagnosis()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void okButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

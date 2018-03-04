@@ -54,18 +54,19 @@ namespace MedicalProject
             {
                 MessageBox.Show("Error reading file...");
             }
-            //loggedinuser variable saves the data of the successful login account for future reference on if user is nurse/doctor.
-            User loggedinuser = new User();
             bool loggedin = false;
             foreach (var u in userlist)
             {
                 if ((txtBxUsername.Text.Trim() == u.UserName) & (passwordBox.Password == u.PassWord))
                 {
-                    loggedinuser = u;
                     PatientInfo sw = new PatientInfo();
                     sw.Show();
                     this.Close();
                     loggedin = true;
+                    if (u.JobTitle == "Doctor")
+                    {
+                        SavedLogin.IsDoctor = true;
+                    }
                     break;
                 }
             }

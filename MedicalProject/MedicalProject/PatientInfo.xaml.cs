@@ -38,8 +38,11 @@ namespace MedicalProject
                     string singlepatient = sr.ReadLine();
                     string[] singlepatientdata = singlepatient.Split('|');
                     PatientInformation patient = new PatientInformation() { FirstName = singlepatientdata[0], LastName = singlepatientdata[1], DateOfBirth = singlepatientdata[2],
-                    AdmitDate = singlepatientdata[3], Age = Int32.Parse(singlepatientdata[4]), Gender = singlepatientdata[5], ChiefComplaint = singlepatientdata[6], IDNumber = newestid++.ToString("D5") };
-                    patientlist.Add(patient);
+                    AdmitDate = singlepatientdata[3], Age = Int32.Parse(singlepatientdata[4]), Gender = singlepatientdata[5], ChiefComplaint = singlepatientdata[6], NotDischarged = Convert.ToBoolean(singlepatientdata[7]), IDNumber = newestid++.ToString("D5") };
+                    if (singlepatientdata[7] == "True")
+                    {
+                        patientlist.Add(patient);
+                    }
                     PatientTable.ItemsSource = patientlist;
                 }
                 fs.Close();
@@ -49,13 +52,14 @@ namespace MedicalProject
                 MessageBox.Show("Error finding patients...");
             }
         }
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
         private void PatientTable_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            SelectedPatient.CurrentPatient = (PatientInformation)PatientTable.SelectedItems[0];
             patientRecord sw = new patientRecord();
             sw.Show();
             this.Close();
@@ -80,5 +84,6 @@ namespace MedicalProject
         {
 
         }
+
     }
 }

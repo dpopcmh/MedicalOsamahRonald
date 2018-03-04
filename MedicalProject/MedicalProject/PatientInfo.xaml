@@ -11,7 +11,7 @@
             <Image Source="Icons/bck5.jpg" Margin="0,-470,-0.2,216"/>
             <TextBlock Text="Patient Information" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" Margin="419,27,436.8,0"/>
             <Image Source="Icons/searchimg.png" Width="100" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,27,54.8,641" RenderTransformOrigin="0.075,0.241" Height="68"/>
-            <Button x:Name="button" HorizontalAlignment="Left" Margin="886,27,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Height="68" Click="button_Click"/>
+            <Button x:Name="button" HorizontalAlignment="Left" Margin="886,27,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Height="68" Click="Button_Click"/>
             <Grid Margin="20 100 20 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20"/>
@@ -44,7 +44,7 @@
 
         </Grid>
         <Grid Height="527" Margin="20,80,20 40" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
-            <ListView x:Name="PatientTable" ItemsSource="{Binding Source=patientlist}" MouseDoubleClick="PatientTable_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="PatientTable_SelectionChanged">
+            <ListView x:Name="PatientTable" ItemsSource="{Binding Source=patientlist}" MouseDoubleClick="PatientTable_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="PatientTable_SelectionChanged" SelectionMode="Single">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Patient First Name" DisplayMemberBinding="{Binding Path=FirstName}"      Width="140" />
