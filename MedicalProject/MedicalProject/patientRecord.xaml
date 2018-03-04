@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="patientRecord" Height="700" Width="724" WindowStyle="None" ResizeMode="NoResize" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        Title="patientRecord" Height="700" Width="724" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid Background="#FFF5F8FA">
 
         <Image Source="Icons/recordsImg.jpg" Margin="0 0 0 590"/>
@@ -57,12 +57,11 @@
             <Button Content="Add Lab Result" Grid.Column="1" Grid.Row="4" FontSize="14" Grid.ColumnSpan="1" Margin="0 180 0 0" Width="120"/>
             <Button Content="Add Diagnosis" Grid.Column="5" Grid.Row="4" FontSize="14" Grid.ColumnSpan="2" Margin="0 180 0 0" Width="120" Click="Button_Click"/>
         </Grid>
-        <Border Margin="20,115,26,16"/>
+        <Image Margin="20,126,559,441" x:Name="PatientImage"/>
         <ListBox   x:Name="patientAllergies" Margin="20,310,400,230" />
         <ListBox   x:Name="patientMedication" Margin="394,310,26,230" />
-        <ListBox   x:Name="LabResult" Margin="20,524,400,16" />
-        <ListBox   x:Name="PatientDiagnosis" Margin="394,522,26,18" />
-
+        <ListBox   x:Name="patientLabResult" Margin="20,524,400,16" />
+        <ListBox   x:Name="patientDiagnosis" Margin="394,522,26,18" />
 
     </Grid>
 </Window>

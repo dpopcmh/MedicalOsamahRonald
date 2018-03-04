@@ -16,16 +16,14 @@ using System.Windows.Shapes;
 namespace MedicalProject
 {
     /// <summary>
-    /// Interaction logic for Medication.xaml
+    /// Interaction logic for PatientRecordLabResult.xaml
     /// </summary>
-    public partial class Medication : Window
+    public partial class PatientRecordLabResult : Window
     {
-        public Medication()
+        public PatientRecordLabResult()
         {
             InitializeComponent();
         }
-
-       
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

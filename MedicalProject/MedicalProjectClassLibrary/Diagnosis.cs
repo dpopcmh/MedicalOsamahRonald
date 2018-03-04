@@ -8,13 +8,17 @@ namespace MedicalProjectClassLibrary
 {
     public class Diagnosis
     {
-        public string Symptoms { get; set; }
+        public string IDNumber { get; set; }
+
+        public string Opinion { get; set; }
 
         public string DateDiagnosis { get; set; }
 
         public string DoctorName { get; set; }
 
-        public string IDNumber { get; set; }
+        public override string ToString()
+        {
+            return Opinion + " - " + DateDiagnosis + " - " + DoctorName;
+        }
     }
-
 }

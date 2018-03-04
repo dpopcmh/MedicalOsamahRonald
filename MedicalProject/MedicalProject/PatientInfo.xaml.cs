@@ -32,14 +32,13 @@ namespace MedicalProject
                 string path2 = path.Substring(0, path.LastIndexOf("bin")) + "Data" + "\\patientinformation.txt";
                 FileStream fs = new FileStream(path2, FileMode.Open);
                 StreamReader sr = new StreamReader(fs);
-                int newestid = 1;
                 while (sr.Peek() != -1)
                 {
                     string singlepatient = sr.ReadLine();
                     string[] singlepatientdata = singlepatient.Split('|');
-                    PatientInformation patient = new PatientInformation() { FirstName = singlepatientdata[0], LastName = singlepatientdata[1], DateOfBirth = singlepatientdata[2],
-                    AdmitDate = singlepatientdata[3], Age = Int32.Parse(singlepatientdata[4]), Gender = singlepatientdata[5], ChiefComplaint = singlepatientdata[6], NotDischarged = Convert.ToBoolean(singlepatientdata[7]), IDNumber = newestid++.ToString("D5") };
-                    if (singlepatientdata[7] == "True")
+                    PatientInformation patient = new PatientInformation() { IDNumber = singlepatientdata[0], FirstName = singlepatientdata[1], LastName = singlepatientdata[2], DateOfBirth = singlepatientdata[3],
+                    AdmitDate = singlepatientdata[4], Age = Int32.Parse(singlepatientdata[5]), Gender = singlepatientdata[6], ChiefComplaint = singlepatientdata[7], NotDischarged = Convert.ToBoolean(singlepatientdata[8]) };
+                    if (singlepatientdata[8] == "True")
                     {
                         patientlist.Add(patient);
                     }

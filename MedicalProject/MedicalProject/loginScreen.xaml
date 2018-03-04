@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="301.613" Width="460.484" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Main_MouseLeftButtonDown">
+        Title="MainWindow" Height="301.613" Width="460.484" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" MouseLeftButtonDown="Main_MouseLeftButtonDown">
     <Grid x:Name="main1">
         <Image Source="Icons/bkgroundlogin.png"/>
         <TextBlock Text="Medical Records" HorizontalAlignment="Left" Margin="170,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="162" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Foreground="Black"/>
