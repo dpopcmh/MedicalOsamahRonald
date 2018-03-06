@@ -67,6 +67,10 @@ namespace MedicalProject
                     {
                         SavedLogin.IsDoctor = true;
                     }
+                    else if (u.JobTitle =="Nurse")
+                    {
+                        SavedLogin.IsDoctor = false;
+                    }
                     break;
                 }
             }
