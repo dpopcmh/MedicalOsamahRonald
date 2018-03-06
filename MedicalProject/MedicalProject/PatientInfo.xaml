@@ -40,6 +40,7 @@
                 <TextBox x:Name="txtBxChComp" Height="23" Margin="97,3,35,0" Width="131" Grid.Column="4" Grid.Row="1"/>
             </Grid>
             <Button Content="Logout" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="89" Click="Button_Click_1"/>
+            <Button Content="Search" HorizontalAlignment="Left" Height="25" Margin="553,137,0,0" VerticalAlignment="Top" Width="89" Click="Button_Click_Search"/>
 
         </Grid>
         <Grid Height="527" Margin="20,80,20 40" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
