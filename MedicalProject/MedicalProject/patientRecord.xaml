@@ -10,7 +10,7 @@
 
         <Image Source="Icons/recordsImg.jpg" Margin="0 0 0 590"/>
         <TextBlock Text="Patient Record" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Margin="30,22,544.6,0"/>
-        <Button x:Name="btnDischarge" Content="Discharge" HorizontalAlignment="Left" Margin="641,81,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="BtnDischarge" Content="Discharge" HorizontalAlignment="Left" Margin="641,81,0,0" VerticalAlignment="Top" Width="75" Click="BtnDischarge_Click"/>
         <Button x:Name="btnBack" Content="Back to Census" HorizontalAlignment="Left" Height="22" Margin="10,81,0,0" VerticalAlignment="Top" Width="87" Click="BtnBack_Click"/>
         <Grid Margin="0 100 0 20">
             <Grid.ColumnDefinitions>
