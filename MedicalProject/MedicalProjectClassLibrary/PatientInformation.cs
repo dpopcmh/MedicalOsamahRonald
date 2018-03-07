@@ -33,7 +33,7 @@ namespace MedicalProjectClassLibrary
     }
     public static class EditText
     {
-        static void LineEdit (string NewText, string FileName, int ChosenLine)
+        public static void LineEdit (string NewText, string FileName, int ChosenLine)
         {
             string[] AllLine = File.ReadAllLines(FileName);
             AllLine[ChosenLine - 1] = NewText;

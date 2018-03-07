@@ -10,8 +10,8 @@
         <Grid Background="AliceBlue" Margin="0,-67,0,63">
             <Image Source="Icons/bck5.jpg" Margin="0,-470,-0.2,216"/>
             <TextBlock Text="Patient Information" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" Margin="419,27,436.8,0"/>
-            <Image Source="Icons/searchimg.png" Width="100" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,27,54.8,641" RenderTransformOrigin="0.075,0.241" Height="68"/>
-            <Button x:Name="button" HorizontalAlignment="Left" Margin="886,27,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Height="68" Click="Button_Click"/>
+            <Image Source="Icons/searchimg.png" Width="100" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,117,358,551" RenderTransformOrigin="0.075,0.241" Height="68"/>
+            <Button x:Name="button" HorizontalAlignment="Left" Margin="583,117,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Height="68" Click="Button_Click"/>
             <Grid Margin="20 100 20 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20"/>
@@ -40,7 +40,6 @@
                 <TextBox x:Name="txtBxChComp" Height="23" Margin="97,3,35,0" Width="131" Grid.Column="4" Grid.Row="1"/>
             </Grid>
             <Button Content="Logout" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="89" Click="Button_Click_1"/>
-            <Button Content="Search" HorizontalAlignment="Left" Height="25" Margin="553,137,0,0" VerticalAlignment="Top" Width="89" Click="Button_Click_Search"/>
 
         </Grid>
         <Grid Height="527" Margin="20,80,20 40" MouseLeftButtonDown="Grid_MouseLeftButtonDown">

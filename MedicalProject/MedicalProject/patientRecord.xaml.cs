@@ -145,5 +145,45 @@ namespace MedicalProject
             PatientRecordMedication sw = new PatientRecordMedication();
             sw.Show();
         }
+
+        private void BtnDischarge_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Discharge this patient?", "Patient Discharge", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                int linecount = 0;
+                try
+                {
+                    string path = System.Environment.CurrentDirectory;
+                    string path2 = path.Substring(0, path.LastIndexOf("bin")) + "Data" + "\\patientinformation.txt";
+                    FileStream fs = new FileStream(path2, FileMode.Open);
+                    StreamReader sr = new StreamReader(fs);
+                    while (sr.Peek() != -1)
+                    {
+                        string singlepatient = sr.ReadLine();
+                        string[] singlepatientdata = singlepatient.Split('|');
+                        PatientInformation patient = new PatientInformation()
+                        { IDNumber = singlepatientdata[0], FirstName = singlepatientdata[1], LastName = singlepatientdata[2], DateOfBirth = singlepatientdata[3], AdmitDate = singlepatientdata[4], Age = Int32.Parse(singlepatientdata[5]), Gender = singlepatientdata[6], ChiefComplaint = singlepatientdata[7], NotDischarged = Convert.ToBoolean(singlepatientdata[8]) };
+                        linecount++;
+                        if (singlepatientdata[0] == SelectedPatient.CurrentPatient.IDNumber)
+                        {
+                        fs.Close();
+                        singlepatientdata[8] = "False";
+                        string dischargepatient = string.Join("|", singlepatientdata);
+                        EditText.LineEdit(dischargepatient, path2, linecount);
+                        MessageBox.Show("Patient " + singlepatientdata[1] + " " + singlepatientdata [2] + " discharged.");
+                        PatientInfo sw = new PatientInfo();
+                        sw.Show();
+                        this.Close();
+                        break;
+                        }
+                    }
+                    fs.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error finding patient...");
+                }
+            }
+        }
     }
 }

@@ -53,7 +53,33 @@ namespace MedicalProject
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            try
+            {
+                patientlist.Clear();
+                string path = System.Environment.CurrentDirectory;
+                string path2 = path.Substring(0, path.LastIndexOf("bin")) + "Data" + "\\patientinformation.txt";
+                FileStream fs = new FileStream(path2, FileMode.Open);
+                StreamReader sr = new StreamReader(fs);
+                while (sr.Peek() != -1)
+                {
+                    string singlepatient = sr.ReadLine();
+                    string[] singlepatientdata = singlepatient.Split('|');
+                    PatientInformation patient = new PatientInformation()
+                    { IDNumber = singlepatientdata[0], FirstName = singlepatientdata[1], LastName = singlepatientdata[2], DateOfBirth = singlepatientdata[3], AdmitDate = singlepatientdata[4], Age = Int32.Parse(singlepatientdata[5]), Gender = singlepatientdata[6], ChiefComplaint = singlepatientdata[7], NotDischarged = Convert.ToBoolean(singlepatientdata[8]) };
+                    if (singlepatientdata[8] == "True")
+                    {
+                        if ((txtBxFName.Text.Length > 0) & (singlepatientdata[1].Contains(txtBxFName.Text)) | ((txtBxLName.Text.Length > 0) & (singlepatientdata[2].Contains(txtBxLName.Text)) | ((txtBxChComp.Text.Length > 0) & (singlepatientdata[7].Contains(txtBxChComp.Text)) | ((txtBxAge.Text.Length > 0) & (singlepatientdata[5] == (txtBxAge.Text))))))
+                        {
+                            patientlist.Add(patient);
+                        }
+                    }
+                }
+                fs.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Search error...");
+            }
         }
 
         private void PatientTable_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -89,37 +115,6 @@ namespace MedicalProject
             MainWindow sw = new MainWindow();
             sw.Show();
             this.Close();
-        }
-
-        private void Button_Click_Search(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                patientlist.Clear();
-                string path = System.Environment.CurrentDirectory;
-                string path2 = path.Substring(0, path.LastIndexOf("bin")) + "Data" + "\\patientinformation.txt";
-                FileStream fs = new FileStream(path2, FileMode.Open);
-                StreamReader sr = new StreamReader(fs);
-                while (sr.Peek() != -1)
-                {
-                    string singlepatient = sr.ReadLine();
-                    string[] singlepatientdata = singlepatient.Split('|');
-                    PatientInformation patient = new PatientInformation()
-                    { IDNumber = singlepatientdata[0], FirstName = singlepatientdata[1], LastName = singlepatientdata[2], DateOfBirth = singlepatientdata[3], AdmitDate = singlepatientdata[4], Age = Int32.Parse(singlepatientdata[5]), Gender = singlepatientdata[6], ChiefComplaint = singlepatientdata[7], NotDischarged = Convert.ToBoolean(singlepatientdata[8]) };
-                    if (singlepatientdata[8] == "True")
-                    {
-                        if ((txtBxFName.Text.Length > 0) & (singlepatientdata[1].Contains(txtBxFName.Text)) | ((txtBxLName.Text.Length > 0) & (singlepatientdata[2].Contains(txtBxLName.Text)) | ((txtBxChComp.Text.Length > 0) & (singlepatientdata[7].Contains(txtBxChComp.Text)) | ((txtBxAge.Text.Length > 0) & (singlepatientdata[5] == (txtBxAge.Text))))))
-                        {
-                            patientlist.Add(patient);
-                        }
-                    }
-                }
-                fs.Close();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Search error...");
-            }
         }
     }
 }

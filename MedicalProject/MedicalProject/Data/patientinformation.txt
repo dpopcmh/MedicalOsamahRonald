@@ -1,7 +1,7 @@
 00001|Chad|Hodge|01/01/1901|02/04/2018|117|Male|Lung pain|True
 00002|Real|Person|05/05/1955|12/25/2017|62|Female|Broken arm from car accident|True
 00003|Test|Name|12/25/1980|01/01/2018|05|Female|Long test complaint to see how far the UI goes before it's too much|False
-00004|John|Doe|03/03/1933|03/03/2018|03|Male|Influenza|True|00004
+00004|John|Doe|03/03/1933|03/03/2018|03|Male|Influenza|True
 00005|Tom|Smith|01/01/1900|01/01/1900|14|Male|Sharp pain in side, vomitting|True
 00006|Sara|Jane|02/23/2006|05/15/2010|90|Female|Seizure|True
 00007|Human|Being|09/09/2009|02/29/1990|05|Male|Brought by amublance after workplace accident, more tests needed|True
