@@ -53,6 +53,7 @@ namespace MedicalProject
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
             try
             {
                 patientlist.Clear();
@@ -110,7 +111,8 @@ namespace MedicalProject
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+       
+        private void LogOutbtn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow sw = new MainWindow();
             sw.Show();

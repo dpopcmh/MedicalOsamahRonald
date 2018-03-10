@@ -77,5 +77,10 @@ namespace MedicalProject
            if (loggedin == false)
            MessageBox.Show("Wrong password/username... Try again");   
         }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

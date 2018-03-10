@@ -6,11 +6,13 @@
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
         Title="PatientRecord" Height="731.646" Width="1041.028" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" MouseLeftButtonDown="Window_MouseLeftButtonDown_1">
+    <Border BorderThickness="2" BorderBrush="Blue">
     <Grid Margin="0,63,-0.2,-63">
         <Grid Background="AliceBlue" Margin="0,-67,0,63">
             <Image Source="Icons/bck5.jpg" Margin="0,-470,-0.2,216"/>
             <TextBlock Text="Patient Information" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" Margin="419,27,436.8,0"/>
             <Image Source="Icons/searchimg.png" Width="100" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,117,358,551" RenderTransformOrigin="0.075,0.241" Height="68"/>
+
             <Button x:Name="button" HorizontalAlignment="Left" Margin="583,117,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Height="68" Click="Button_Click"/>
             <Grid Margin="20 100 20 0">
                 <Grid.ColumnDefinitions>
@@ -39,8 +41,8 @@
                 <TextBlock Margin="0,2,87,33" Text="Chief Complaint" Grid.Column="4" Grid.RowSpan="2" Grid.Row="1"/>
                 <TextBox x:Name="txtBxChComp" Height="23" Margin="97,3,35,0" Width="131" Grid.Column="4" Grid.Row="1"/>
             </Grid>
-            <Button Content="Logout" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="89" Click="Button_Click_1"/>
-
+            <Image Source="Icons/homepageIMG.ico" Width="63" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,17,944.8,0" RenderTransformOrigin="0.075,0.241" Height="63" ToolTip="Back to Login screen"/>
+            <Button x:Name="LogOutbtn" Content="" HorizontalAlignment="Left" Height="63" Margin="29,17,0,0" VerticalAlignment="Top" Width="63" Click="LogOutbtn_Click" Background="{x:Null}" ToolTip="Back to Login screen"/>
         </Grid>
         <Grid Height="527" Margin="20,80,20 40" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
             <ListView x:Name="PatientTable" ItemsSource="{Binding Source=patientlist}" MouseDoubleClick="PatientTable_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="PatientTable_SelectionChanged" SelectionMode="Single">
@@ -56,5 +58,5 @@
             </ListView>
         </Grid>
     </Grid>
-
+    </Border>
 </Window>

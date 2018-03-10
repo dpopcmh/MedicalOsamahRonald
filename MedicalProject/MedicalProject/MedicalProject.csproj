@@ -180,5 +180,14 @@
     <Folder Include="Data\" />
     <Folder Include="Photos\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\homepageIMG.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Exit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\diagnosisImg.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

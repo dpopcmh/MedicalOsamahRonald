@@ -6,13 +6,15 @@
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
         Title="patientRecord" Height="700" Width="724" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Border BorderThickness="2" BorderBrush="Blue">
     <Grid Background="#FFF5F8FA">
-
-        <Image Source="Icons/recordsImg.jpg" Margin="0 0 0 590"/>
+           
+        <Image Source="Icons/recordsImg.jpg" Margin="1,0,0,590"/>
         <TextBlock Text="Patient Record" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Margin="30,22,544.6,0"/>
-        <Button x:Name="BtnDischarge" Content="Discharge" HorizontalAlignment="Left" Margin="641,81,0,0" VerticalAlignment="Top" Width="75" Click="BtnDischarge_Click"/>
-        <Button x:Name="btnBack" Content="Back to Census" HorizontalAlignment="Left" Height="22" Margin="10,81,0,0" VerticalAlignment="Top" Width="87" Click="BtnBack_Click"/>
-        <Grid Margin="0 100 0 20">
+        <Button x:Name="BtnDischarge" Content="Discharge" HorizontalAlignment="Left" Margin="632,81,0,0" VerticalAlignment="Top" Width="75" Click="BtnDischarge_Click"/>
+        <Button x:Name="btnBack" Content="Back to Census" HorizontalAlignment="Left" Height="22" Margin="13,81,0,0" VerticalAlignment="Top" Width="87" Click="BtnBack_Click"/>
+            
+            <Grid Margin="0 100 0 20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition Width="auto"/>
@@ -65,4 +67,5 @@
         <TextBlock x:Name="_noImage" HorizontalAlignment="Left" Height="67" Margin="60,175,0,0" TextWrapping="Wrap" Text="No Image" FontSize="15" Visibility="Visible" VerticalAlignment="Top" Width="66"/>
 
     </Grid>
+        </Border>
 </Window>
