@@ -1,3 +1,4 @@
-00002|Bone fracture in Left Arm|Dr. Hodge|02/25/2018
-00002|Bruised Ribs|Dr. Hodge|02/25/2018
-00005|Pneumonia|Dr. Mann|03/01/2018
+10001|Bone fracture in Left Arm|Dr. Hodge|02/25/2018
+10001|Bruised Ribs|Dr. Hodge|02/25/2018
+10004|Pneumonia|Dr. Mann|03/01/2018
+10003|Kidney Stone|Dr. Alex|03/12/2018

@@ -63,6 +63,7 @@ namespace MedicalProject
                     sw.Show();
                     this.Close();
                     loggedin = true;
+                    LoggedInUser.UserName = u.UserName;
                     if (u.JobTitle == "Doctor")
                     {
                         SavedLogin.IsDoctor = true;

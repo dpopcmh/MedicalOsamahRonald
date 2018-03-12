@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Allergy.cs" />
     <Compile Include="Diagnosis.cs" />
     <Compile Include="LabResult.cs" />
     <Compile Include="Medication.cs" />

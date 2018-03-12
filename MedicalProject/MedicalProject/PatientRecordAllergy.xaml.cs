@@ -17,31 +17,24 @@ using MedicalProjectClassLibrary;
 namespace MedicalProject
 {
     /// <summary>
-    /// Interaction logic for PatientRecordLabResult.xaml
+    /// Interaction logic for PatientRecordAllergy.xaml
     /// </summary>
-    public partial class PatientRecordLabResult : Window
+    public partial class PatientRecordAllergy : Window
     {
-        public PatientRecordLabResult()
+        public PatientRecordAllergy()
         {
             InitializeComponent();
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            patientRecord sw = new patientRecord();
-            sw.Show();
-            this.Close();
-        }
-
-        private void OkButton_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             try
             {
                 string path = System.Environment.CurrentDirectory;
-                string path2 = path.Substring(0, path.LastIndexOf("bin")) + "Data" + "\\labresults.txt";
+                string path2 = path.Substring(0, path.LastIndexOf("bin")) + "Data" + "\\allergies.txt";
                 {
                     List<string> filetext = File.ReadAllLines(path2).ToList();
-                    filetext.Add(SelectedPatient.CurrentPatient.IDNumber + "|" + txtLabType.Text + "|" + txtLabResult.Text + "|" + DateTime.Now.ToString("MM/dd/yyyy"));
+                    filetext.Add(SelectedPatient.CurrentPatient.IDNumber + "|" + txtAllergy.Text);
                     File.WriteAllLines(path2, filetext);
                     patientRecord sw = new patientRecord();
                     sw.Show();
@@ -51,14 +44,22 @@ namespace MedicalProject
 
             catch (Exception)
             {
-                MessageBox.Show("Error adding lab result...");
+                MessageBox.Show("Error adding allergy...");
             }
-
         }
 
+        
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+       
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            patientRecord sw = new patientRecord();
+            sw.Show();
+            this.Close();
         }
     }
 }

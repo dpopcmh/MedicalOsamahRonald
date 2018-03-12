@@ -1,12 +1,12 @@
-00001|Chad|Hodge|01/01/1901|02/04/2018|117|Male|Lung pain|True
-00002|Real|Person|05/05/1955|12/25/2017|62|Female|Broken arm from car accident|True
-00003|Test|Name|12/25/1980|01/01/2018|05|Female|Long test complaint to see how far the UI goes before it's too much|False
-00004|John|Doe|03/03/1933|03/03/2018|03|Male|Influenza|True
-00005|Tom|Smith|01/01/1900|01/01/1900|14|Male|Sharp pain in side, vomitting|True
-00006|Sara|Jane|02/23/2006|05/15/2010|90|Female|Seizure|True
-00007|Human|Being|09/09/2009|02/29/1990|05|Male|Brought by amublance after workplace accident, more tests needed|True
-00008|A|B|07/31/1954|05/05/2017|45|Female|Secret|False
-00009|Matthew|Kim|03/05/1990|03/06/2018|28|Male|Influenza|True
-00010|Jesus|Escobedo|12/30/1975|03/06/2018|44|Male|Influenza|True
-00011|Jaleh|Abbasi|08/03/2000|03/06/2018|18|Female|Influenza|True
-00012|Tom|Wright|01/01/1900|01/01/1900|62|Male|Test|True
+10000|Chad|Hodge|01/01/1901|02/04/2018|117|Male|Lung pain|True
+10001|Real|Person|05/05/1955|12/25/2017|62|Female|Broken arm from car accident|True
+10002|Test|Name|12/25/1980|01/01/2018|05|Female|Long test complaint to see how far the UI goes before it's too much|False
+10003|John|Doe|03/03/1933|03/03/2018|03|Male|Influenza|True
+10004|Tom|Smith|01/01/1900|01/01/1900|14|Male|Sharp pain in side, vomitting|True
+10005|Sara|Jane|02/23/2006|05/15/2010|90|Female|Seizure|True
+10006|Human|Being|09/09/2009|02/29/1990|05|Male|Brought by amublance after workplace accident, more tests needed|True
+10007|A|B|07/31/1954|05/05/2017|45|Female|Secret|False
+10008|Matthew|Kim|03/05/1990|03/06/2018|28|Male|Influenza|True
+10009|Jesus|Escobedo|12/30/1975|03/06/2018|44|Male|Influenza|True
+10010|Jaleh|Abbasi|08/03/2000|03/06/2018|18|Female|Influenza|True
+10011|Tom|Wright|01/01/1900|01/01/1900|62|Male|Test|True

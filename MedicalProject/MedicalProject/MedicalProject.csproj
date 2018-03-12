@@ -57,7 +57,7 @@
     <Compile Include="PatientRecordDiagnosis.xaml.cs">
       <DependentUpon>PatientRecordDiagnosis.xaml</DependentUpon>
     </Compile>
-    <Page Include="Allergy.xaml">
+    <Page Include="PatientRecordAllergy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -69,8 +69,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Allergy.xaml.cs">
-      <DependentUpon>Allergy.xaml</DependentUpon>
+    <Compile Include="PatientRecordAllergy.xaml.cs">
+      <DependentUpon>PatientRecordAllergy.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -188,6 +188,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\diagnosisImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\refreshIMG.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

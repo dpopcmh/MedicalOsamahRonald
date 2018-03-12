@@ -5,58 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="PatientRecord" Height="731.646" Width="1041.028" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" MouseLeftButtonDown="Window_MouseLeftButtonDown_1">
+        Title="PatientRecord" Height="731.646" Width="1041.028" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Border BorderThickness="2" BorderBrush="Blue">
-    <Grid Margin="0,63,-0.2,-63">
-        <Grid Background="AliceBlue" Margin="0,-67,0,63">
-            <Image Source="Icons/bck5.jpg" Margin="0,-470,-0.2,216"/>
-            <TextBlock Text="Patient Information" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" Margin="419,27,436.8,0"/>
-            <Image Source="Icons/searchimg.png" Width="100" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,117,358,551" RenderTransformOrigin="0.075,0.241" Height="68"/>
+        <Grid Margin="0,63,-0.2,-63">
+            <Grid Background="AliceBlue" Margin="0,-67,0,63">
+                <Image Source="Icons/bck5.jpg" Margin="0,-470,-0.2,216"/>
+                <TextBlock Text="Patient Information" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" Margin="419,27,436.8,0"/>
+                <Image Source="Icons/searchimg.png" Width="100" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,117,358,551" RenderTransformOrigin="0.075,0.241" Height="68" ToolTip="Search Patients" />
 
-            <Button x:Name="button" HorizontalAlignment="Left" Margin="583,117,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Height="68" Click="Button_Click"/>
-            <Grid Margin="20 100 20 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="20"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="20"/>
-                </Grid.RowDefinitions>
+                <Button x:Name="button" HorizontalAlignment="Left" Margin="583,117,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Height="68" Click="Button_Click" ToolTip="Search Patients" />
+                <Grid Margin="20 100 20 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
 
-                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Patient First Name" Grid.Column="1" Grid.Row="1"/>
-                <TextBox x:Name="txtBxFName" HorizontalAlignment="Left" Height="23" Grid.Column="2" Grid.Row="1" Margin="10 0 10 0" Width="131"/>
-                <TextBlock  Text="Patient Last Name" Grid.Column="1" Grid.Row="2" Margin="0 10 10 0"/>
-                <TextBox x:Name="txtBxLName" Height="23" Margin="10 10 10 0" Width="131" Grid.Column="2" Grid.Row="2"/>
-                <TextBox x:Name="txtBxAge" Height="23" Margin="97,10,35,0" Width="131" Grid.Column="4" Grid.Row="2"/>
-                <TextBlock Text="Age" Grid.Column="4" Grid.Row="2" Margin="19,10,198,0"/>
-                <TextBlock Margin="0,2,87,33" Text="Chief Complaint" Grid.Column="4" Grid.RowSpan="2" Grid.Row="1"/>
-                <TextBox x:Name="txtBxChComp" Height="23" Margin="97,3,35,0" Width="131" Grid.Column="4" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Patient First Name" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="txtBxFName" HorizontalAlignment="Left" Height="23" Grid.Column="2" Grid.Row="1" Margin="10 0 10 0" Width="131"/>
+                    <TextBlock  Text="Patient Last Name" Grid.Column="1" Grid.Row="2" Margin="0 10 10 0"/>
+                    <TextBox x:Name="txtBxLName" Height="23" Margin="10 10 10 0" Width="131" Grid.Column="2" Grid.Row="2"/>
+                    <TextBox x:Name="txtBxAge" Height="23" Margin="97,10,35,0" Width="131" Grid.Column="4" Grid.Row="2"/>
+                    <TextBlock Text="Age" Grid.Column="4" Grid.Row="2" Margin="19,10,198,0"/>
+                    <TextBlock Margin="0,2,87,33" Text="Chief Complaint" Grid.Column="4" Grid.RowSpan="2" Grid.Row="1"/>
+                    <TextBox x:Name="txtBxChComp" Height="23" Margin="97,3,35,0" Width="131" Grid.Column="4" Grid.Row="1"/>
+                </Grid>
+                <Image Source="Icons/homepageIMG.ico" Width="63" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,17,944.8,0" RenderTransformOrigin="0.075,0.241" Height="63" ToolTip="Back to Login screen"/>
+                <Button x:Name="LogOutbtn" Content="" Height="63" Margin="29,17,945,0" VerticalAlignment="Top" Click="LogOutbtn_Click" Background="{x:Null}" ToolTip="Back to Login screen"/>
+                <Image Source="Icons/refreshIMG.png" Width="63" HorizontalAlignment="Right" VerticalAlignment="Top" ToolTip="Refresh Patient List" Margin="0,17,36,0"/>
+               <Button x:Name="Refreshbtn" Content="" HorizontalAlignment="Left" Height="63" Margin="938,17,0,0" VerticalAlignment="Top" Width="63" Click="Refreshbtn_Click" Background="{x:Null}" ToolTip="Refresh Patient List"/>
             </Grid>
-            <Image Source="Icons/homepageIMG.ico" Width="63" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,17,944.8,0" RenderTransformOrigin="0.075,0.241" Height="63" ToolTip="Back to Login screen"/>
-            <Button x:Name="LogOutbtn" Content="" HorizontalAlignment="Left" Height="63" Margin="29,17,0,0" VerticalAlignment="Top" Width="63" Click="LogOutbtn_Click" Background="{x:Null}" ToolTip="Back to Login screen"/>
+            <Grid Height="527" Margin="20,80,20 40" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+                <ListView x:Name="PatientTable" ItemsSource="{Binding Source=patientlist}" MouseDoubleClick="PatientTable_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="PatientTable_SelectionChanged" SelectionMode="Single">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Patient First Name" DisplayMemberBinding="{Binding Path=FirstName}"      Width="140" />
+                            <GridViewColumn Header="Patient Last Name"  DisplayMemberBinding="{Binding Path=LastName}"       Width="140" />
+                            <GridViewColumn Header="Patient DOB"        DisplayMemberBinding="{Binding Path=DateOfBirth,StringFormat=MM/dd/yyyy}"    Width="100" />
+                            <GridViewColumn Header="Patient Age"                DisplayMemberBinding="{Binding Path=Age}"            Width="100" />
+                            <GridViewColumn Header="Chief Complaint"    DisplayMemberBinding="{Binding Path=ChiefComplaint}" Width="500"  />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
         </Grid>
-        <Grid Height="527" Margin="20,80,20 40" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
-            <ListView x:Name="PatientTable" ItemsSource="{Binding Source=patientlist}" MouseDoubleClick="PatientTable_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="PatientTable_SelectionChanged" SelectionMode="Single">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Patient First Name" DisplayMemberBinding="{Binding Path=FirstName}"      Width="140" />
-                        <GridViewColumn Header="Patient Last Name"  DisplayMemberBinding="{Binding Path=LastName}"       Width="140" />
-                        <GridViewColumn Header="Patient DOB"        DisplayMemberBinding="{Binding Path=DateOfBirth,StringFormat=MM/dd/yyyy}"    Width="100" />
-                        <GridViewColumn Header="Patient Age"                DisplayMemberBinding="{Binding Path=Age}"            Width="100" />
-                        <GridViewColumn Header="Chief Complaint"    DisplayMemberBinding="{Binding Path=ChiefComplaint}" Width="500"  />
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </Grid>
-    </Grid>
     </Border>
 </Window>

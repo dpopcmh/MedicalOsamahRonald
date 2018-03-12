@@ -37,15 +37,14 @@ namespace MedicalProject
             {
                 string path = System.Environment.CurrentDirectory;
                 string path2 = path.Substring(0, path.LastIndexOf("bin")) + "Data" + "\\medication.txt";
-                using (FileStream fs = new FileStream(path2, FileMode.Append, FileAccess.Write))
-                using (StreamWriter sw = new StreamWriter(fs))
                 {
-                    sw.WriteLine(SelectedPatient.CurrentPatient.IDNumber + "|" + txtMedication.Text + "|" + txtDosage.Text + "|" + DateTime.Now.ToString("MM/dd/yyyy"));
-                    sw.Close();
-                    fs.Close();
+                    List<string> filetext = File.ReadAllLines(path2).ToList();
+                    filetext.Add(SelectedPatient.CurrentPatient.IDNumber + "|" + txtMedication.Text + "|" + txtDosage.Text + "|" + DateTime.Now.ToString("MM/dd/yyyy"));
+                    File.WriteAllLines(path2, filetext);
+                    patientRecord sw = new patientRecord();
+                    sw.Show();
                     this.Close();
                 }
-
             }
 
             catch (Exception)
@@ -56,6 +55,8 @@ namespace MedicalProject
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
+            patientRecord sw = new patientRecord();
+            sw.Show();
             this.Close();
         }
     }

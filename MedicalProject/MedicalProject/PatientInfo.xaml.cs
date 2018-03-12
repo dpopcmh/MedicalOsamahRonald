@@ -43,6 +43,8 @@ namespace MedicalProject
                         patientlist.Add(patient);
                     }
                     PatientTable.ItemsSource = patientlist;
+                    string newestid = singlepatientdata[0];
+                    int nextid = Int32.Parse(newestid) + 1;
                 }
                 fs.Close();
             }
@@ -65,8 +67,7 @@ namespace MedicalProject
                 {
                     string singlepatient = sr.ReadLine();
                     string[] singlepatientdata = singlepatient.Split('|');
-                    PatientInformation patient = new PatientInformation()
-                    { IDNumber = singlepatientdata[0], FirstName = singlepatientdata[1], LastName = singlepatientdata[2], DateOfBirth = singlepatientdata[3], AdmitDate = singlepatientdata[4], Age = Int32.Parse(singlepatientdata[5]), Gender = singlepatientdata[6], ChiefComplaint = singlepatientdata[7], NotDischarged = Convert.ToBoolean(singlepatientdata[8]) };
+                    PatientInformation patient = new PatientInformation() { IDNumber = singlepatientdata[0], FirstName = singlepatientdata[1], LastName = singlepatientdata[2], DateOfBirth = singlepatientdata[3], AdmitDate = singlepatientdata[4], Age = Int32.Parse(singlepatientdata[5]), Gender = singlepatientdata[6], ChiefComplaint = singlepatientdata[7], NotDischarged = Convert.ToBoolean(singlepatientdata[8]) };
                     if (singlepatientdata[8] == "True")
                     {
                         if ((txtBxFName.Text.Length > 0) & (singlepatientdata[1].Contains(txtBxFName.Text)) | ((txtBxLName.Text.Length > 0) & (singlepatientdata[2].Contains(txtBxLName.Text)) | ((txtBxChComp.Text.Length > 0) & (singlepatientdata[7].Contains(txtBxChComp.Text)) | ((txtBxAge.Text.Length > 0) & (singlepatientdata[5] == (txtBxAge.Text))))))
@@ -98,25 +99,58 @@ namespace MedicalProject
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
-        }
+            try
+            {
+                this.DragMove();
+            }
+            catch (System.InvalidOperationException)
+            {
 
-        private void Window_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
+            }
         }
-
         private void PatientTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
-
-       
+ 
         private void LogOutbtn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow sw = new MainWindow();
             sw.Show();
             this.Close();
+        }
+
+        private void Refreshbtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                patientlist.Clear();
+                string path = System.Environment.CurrentDirectory;
+                string path2 = path.Substring(0, path.LastIndexOf("bin")) + "Data" + "\\patientinformation.txt";
+                FileStream fs = new FileStream(path2, FileMode.Open);
+                StreamReader sr = new StreamReader(fs);
+                while (sr.Peek() != -1)
+                {
+                    string singlepatient = sr.ReadLine();
+                    string[] singlepatientdata = singlepatient.Split('|');
+                    PatientInformation patient = new PatientInformation() { IDNumber = singlepatientdata[0], FirstName = singlepatientdata[1], LastName = singlepatientdata[2], DateOfBirth = singlepatientdata[3], AdmitDate = singlepatientdata[4], Age = Int32.Parse(singlepatientdata[5]), Gender = singlepatientdata[6], ChiefComplaint = singlepatientdata[7], NotDischarged = Convert.ToBoolean(singlepatientdata[8]) };
+                    if (singlepatientdata[8] == "True")
+                    {
+                        patientlist.Add(patient);
+                    }
+                    PatientTable.ItemsSource = patientlist;
+                }
+                fs.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error refreshing patients...");
+            }
+        }
+
+        private void Addpatientbtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

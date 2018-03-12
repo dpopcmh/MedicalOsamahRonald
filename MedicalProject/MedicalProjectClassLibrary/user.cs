@@ -18,4 +18,8 @@ namespace MedicalProjectClassLibrary
     {
         public static bool IsDoctor { get; set; }
     }
+    public static class LoggedInUser
+    {
+        public static string UserName { get; set; }
+    }
 }

@@ -1,3 +1,5 @@
 Alex|Ronald|Doctor
+Hodge|Chad|Doctor
 Username|Password|Nurse
-Test|Test|Doctor
+TestDoctor|Password|Doctor
+TestNurse|Password|Nurse

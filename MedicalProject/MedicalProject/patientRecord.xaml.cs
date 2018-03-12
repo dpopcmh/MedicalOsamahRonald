@@ -25,6 +25,7 @@ namespace MedicalProject
         public ObservableCollection<MedicalProjectClassLibrary.Diagnosis> patientdiagnosislist = new ObservableCollection<MedicalProjectClassLibrary.Diagnosis>();
         public ObservableCollection<MedicalProjectClassLibrary.Medication> patientmedicationlist = new ObservableCollection<MedicalProjectClassLibrary.Medication>();
         public ObservableCollection<MedicalProjectClassLibrary.LabResult> patientlabresultlist = new ObservableCollection<MedicalProjectClassLibrary.LabResult>();
+        public ObservableCollection<MedicalProjectClassLibrary.Allergy> patientallergylist = new ObservableCollection<MedicalProjectClassLibrary.Allergy>();
         public patientRecord()
         {
             InitializeComponent();
@@ -55,8 +56,8 @@ namespace MedicalProject
                     Diagnosis diagnosis = new Diagnosis() { IDNumber = singledatasplit[0], Opinion = singledatasplit[1], DoctorName = singledatasplit[2], DateDiagnosis = singledatasplit[3] };
                     if (singledatasplit[0] == SelectedPatient.CurrentPatient.IDNumber)
                     {
-                     patientdiagnosislist.Add(diagnosis);
-                     patientDiagnosis.ItemsSource = patientdiagnosislist;
+                        patientdiagnosislist.Add(diagnosis);
+                        patientDiagnosis.ItemsSource = patientdiagnosislist;
                     }
                 }
                 fs.Close();
@@ -114,6 +115,30 @@ namespace MedicalProject
                 MessageBox.Show("Error finding lab results...");
             }
 
+            try
+            {
+                string path = System.Environment.CurrentDirectory;
+                string path2 = path.Substring(0, path.LastIndexOf("bin")) + "Data" + "\\allergies.txt";
+                FileStream fs = new FileStream(path2, FileMode.Open);
+                StreamReader sr = new StreamReader(fs);
+                while (sr.Peek() != -1)
+                {
+                    string singledataentry = sr.ReadLine();
+                    string[] singledatasplit = singledataentry.Split('|');
+                    Allergy allergy = new Allergy() { IDNumber = singledatasplit[0], SpecificAllergy = singledatasplit[1] };
+                    if (singledatasplit[0] == SelectedPatient.CurrentPatient.IDNumber)
+                    {
+                        patientallergylist.Add(allergy);
+                        patientAllergies.ItemsSource = patientallergylist;
+                    }
+                }
+                fs.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error finding allergies...");
+            }
+
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -123,8 +148,9 @@ namespace MedicalProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-                PatientRecordDiagnosis sw = new PatientRecordDiagnosis();
-                sw.Show();
+            PatientRecordDiagnosis sw = new PatientRecordDiagnosis();
+            sw.Show();
+            this.Close();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -138,12 +164,21 @@ namespace MedicalProject
         {
             PatientRecordLabResult sw = new PatientRecordLabResult();
             sw.Show();
+            this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             PatientRecordMedication sw = new PatientRecordMedication();
             sw.Show();
+            this.Close();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            PatientRecordAllergy sw = new PatientRecordAllergy();
+            sw.Show();
+            this.Close();
         }
 
         private void BtnDischarge_Click(object sender, RoutedEventArgs e)
