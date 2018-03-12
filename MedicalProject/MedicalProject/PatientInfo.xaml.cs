@@ -86,10 +86,17 @@ namespace MedicalProject
 
         private void PatientTable_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            SelectedPatient.CurrentPatient = (PatientInformation)PatientTable.SelectedItems[0];
-            patientRecord sw = new patientRecord();
-            sw.Show();
-            this.Close();
+            try
+            {
+                SelectedPatient.CurrentPatient = (PatientInformation)PatientTable.SelectedItems[0];
+                patientRecord sw = new patientRecord();
+                sw.Show();
+                this.Close();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+
+            }
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
